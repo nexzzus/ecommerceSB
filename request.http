@@ -1,0 +1,13 @@
+### AUTH REGISTER
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Mateo",
+  "lastName": "Muñoz",
+  "email": "munozomateo@gmail.com",
+  "password": "nexzus",
+  "confirmPassword": "nexzus",
+  "phone": "3009080885",
+  "address": "Medellín"
+}

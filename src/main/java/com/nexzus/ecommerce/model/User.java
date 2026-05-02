@@ -38,7 +38,9 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column(length = 10)
     private String phone;
 
+    @Column(length = 50)
     private String address;
 }
