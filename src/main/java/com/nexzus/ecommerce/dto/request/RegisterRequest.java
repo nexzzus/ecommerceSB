@@ -17,6 +17,10 @@ public record RegisterRequest(
         @Email(message = "El correo no tiene un formato válido")
         String email,
 
+        @Size(max = 10, message = "El documento de identidad debe maxímo {max} caracteres")
+        @NotBlank(message = "El documento de identidad es obligatorio")
+        String dni,
+
         @NotBlank(message = "La contraseña es obligatoria")
         @Size(min = 3, message = "La contraseña debe tener al menos {min} caracteres")
         @Size(max = 200, message = "La contraseña no puede tener mas de {max} caracteres")

@@ -4,6 +4,8 @@ import com.nexzus.ecommerce.config.Mapper;
 import com.nexzus.ecommerce.dto.request.LoginRequest;
 import com.nexzus.ecommerce.dto.request.RegisterRequest;
 import com.nexzus.ecommerce.dto.response.AuthResponse;
+import com.nexzus.ecommerce.exception.DuplicateResourceException;
+import com.nexzus.ecommerce.exception.ResourceNotFoundException;
 import com.nexzus.ecommerce.model.RefreshToken;
 import com.nexzus.ecommerce.model.User;
 import com.nexzus.ecommerce.repository.RefreshTokenRepository;
@@ -32,8 +34,7 @@ public class AuthService implements IAuthService {
     @Override
     public AuthResponse register(RegisterRequest request) {
         if (userRepository.existsUserByEmail(request.email())) {
-//            TODO: Implementar manejo de excepciones
-            throw new RuntimeException("Email already exists");
+            throw new DuplicateResourceException("Usuario", "correo", request.email());
         }
         User userCreated = mapper.toUserEntity(request);
         userCreated.setPassword(passwordEncoder.encode(request.password()));
@@ -46,7 +47,7 @@ public class AuthService implements IAuthService {
     @Override
     public AuthResponse login(LoginRequest request) {
         User user = userRepository.findByEmail(request.email())
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Usuario",  "correo", request.email()));
 
         if (!passwordEncoder.matches(request.password(), user.getPassword())) {
             throw new IllegalArgumentException("Wrong password");
