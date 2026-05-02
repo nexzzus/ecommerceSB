@@ -97,6 +97,8 @@ atlassian-ide-plugin.xml
 # Cursive Clojure plugin
 .idea/replstate.xml
 
+application-local.properties
+
 # SonarLint plugin
 .idea/sonarlint/
 
