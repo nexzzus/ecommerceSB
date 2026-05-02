@@ -3,7 +3,6 @@ package com.nexzus.ecommerce.dto.response;
 import com.nexzus.ecommerce.dto.UserDto;
 
 public record AuthResponse(
-//         TODO: token
         String accessToken,
         String regreshToken,
         String tokenType,
