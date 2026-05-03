@@ -5,9 +5,7 @@ Content-Type: application/json
 {
   "firstName": "Mateo",
   "lastName": "Muñoz",
-  "email": "munozf00fomateo66@gmail.com",
+  "email": "quicenosalom8e8@gmail.com",
   "password": "nexzus",
-  "confirmPassword": "nexzus",
-  "phone": "3009080885",
-  "address": "Medellín"
+  "confirmPassword": "nexzus"
 }

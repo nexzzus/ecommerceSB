@@ -35,7 +35,7 @@ public class User {
     @Column(nullable = false, unique = true, length = 100)
     private String email;
 
-    @Column(nullable = false, length = 10, unique = true)
+    @Column(length = 10, unique = true)
     private String dni;
 
     @Column(nullable = false, length = 250)
@@ -44,6 +44,6 @@ public class User {
     @Column(length = 10)
     private String phone;
 
-    @Column(length = 50)
-    private String address;
+    @Column(nullable = false)
+    private boolean enabled = true;
 }

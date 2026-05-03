@@ -10,7 +10,7 @@ public interface Mapper {
     @org.mapstruct.Mapping(target = "firstName", source = "firstName")
     @org.mapstruct.Mapping(target = "lastName", source = "lastName")
     @org.mapstruct.Mapping(target = "password", ignore = true)
-    @org.mapstruct.Mapping(target = "address", source = "address")
+//    @org.mapstruct.Mapping(target = "address", source = "address")
     User toUserEntity(RegisterRequest request);
 
     UserDto toUserDto(User user);

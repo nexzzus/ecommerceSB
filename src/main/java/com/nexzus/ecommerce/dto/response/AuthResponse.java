@@ -4,7 +4,7 @@ import com.nexzus.ecommerce.dto.UserDto;
 
 public record AuthResponse(
         String accessToken,
-        String regreshToken,
+        String refreshToken,
         String tokenType,
         Long expiresIn,
         UserDto user
